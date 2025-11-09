@@ -109,8 +109,3 @@ pip install -r requirements.txt
    * Cleaned CSVs prepared for cross-country analysis
 
 ```
-
----
-
-This README covers **Task 1 (Git & environment)** and **Task 2 (EDA)** fully, and is ready to submit or continue building on for later tasks.
-```
