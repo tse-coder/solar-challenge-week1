@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, setup-task ]
+    branches: [ main, setup-task, compare-countries ]
   pull_request:
     branches: [ main ]
 

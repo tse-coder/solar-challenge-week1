@@ -5,7 +5,7 @@
 
 ## Overview
 This repository contains Week 1 of the Solar Challenge.  
-The goal is to set up a reproducible Python environment, perform data profiling and cleaning for solar datasets, and create exploratory analyses.
+The goal is to set up a reproducible Python environment, perform data profiling and cleaning for solar datasets, and create visual analyses, including an interactive Streamlit dashboard.
 
 ---
 
@@ -23,12 +23,23 @@ The goal is to set up a reproducible Python environment, perform data profiling 
 ├── README.md
 ├── src/
 ├── notebooks/
+---
+
+If you want, I can also **add a short “how to reproduce each task” section** with exact commands for Task 1, Task 2, Task 3, and the dashboard — this makes your README completely step-by-step for reviewers.  
+
+Do you want me to do that?
+```
 │   ├── **init**.py
 │   ├── benin_eda.ipynb
 │   ├── togo_eda.ipynb
-│   └── sierra_leone_eda.ipynb
+│   ├── sierra_leone_eda.ipynb
+│   └── compare_countries.ipynb
 ├── tests/
 │   ├── **init**.py
+└── app/
+├── **init**.py
+├── main.py
+└── utils.py
 
 ````
 
@@ -54,13 +65,6 @@ source venv/bin/activate     # macOS/Linux
 venv\Scripts\activate        # Windows
 ```
 
-Or using conda:
-
-```bash
-conda create -n solar-week1 python=3.10 -y
-conda activate solar-week1
-```
-
 ### Install Dependencies
 
 ```bash
@@ -69,43 +73,35 @@ pip install -r requirements.txt
 
 ### Git and CI/CD
 
-* Feature branches are used for tasks (e.g., `setup-task`, `eda-benin`).
-* Commit often with clear messages.
-* GitHub Actions workflow (`.github/workflows/ci.yml`) installs dependencies and confirms environment setup on push or pull request.
+## Git and CI/CD
+
+* Use feature branches for tasks (e.g., `setup-task`, `eda-countries`,`compare-countries`).
+* Commit often with descriptive messages.
+* GitHub Actions workflow (`.github/workflows/ci.yml`) installs dependencies and verifies Python environment on every push and pull request.
 
 ---
 
-## Task 2: Data Profiling, Cleaning & EDA
+## Data Profiling, Cleaning, and EDA
 
 ### Notebooks
 
 * `benin_eda.ipynb`, `togo_eda.ipynb`, `sierra_leone_eda.ipynb`
+* `compare_countries.ipynb` for cross-country analysis
 
 ### Workflow
 
-1. Load each country’s CSV dataset.
-2. Summary statistics & missing value analysis:
+1. Load cleaned CSV for each country.
+2. Perform summary statistics and missing value analysis.
+3. Detect outliers using Z-scores and impute missing values.
+4. Visualize time series, correlations, cleaning impact, distributions, temperature effects, and bubble charts.
+5. Export cleaned CSVs to `data/<country>_clean.csv` (ignored by git).
+6. Cross-country comparison includes boxplots, summary tables, statistical tests, and visual rankings.
 
-   * `df.describe()` for numeric columns
-   * Identify columns with >5% missing values
-3. Outlier detection & cleaning:
+---
 
-   * Compute Z-scores for `GHI`, `DNI`, `DHI`, `ModA`, `ModB`, `WS`, `WSgust`
-   * Flag rows with `|Z| > 3`
-   * Impute missing values with median
-   * Export cleaned CSVs to `data/<country>_clean.csv`
-4. Exploratory Data Analysis:
+## Notes
 
-   * Time series plots (`GHI`, `DNI`, `DHI`, `Tamb`)
-   * Cleaning impact analysis (ModA/ModB pre/post cleaning)
-   * Correlation & scatter plots
-   * Wind and distribution analysis
-   * Temperature and relative humidity relationships
-   * Bubble charts (`GHI` vs. `Tamb`, size = `RH` or `BP`)
-5. Documentation:
+* All raw and cleaned CSVs are excluded from git via `.gitignore`.
+* Notebooks include markdown cells describing findings and observations.
+* All analyses and visualizations are reproducible from the virtual environment.
 
-   * Markdown cells explaining findings
-   * Code cells for loading, cleaning, and visualizations
-   * Cleaned CSVs prepared for cross-country analysis
-
-```
