@@ -23,12 +23,6 @@ The goal is to set up a reproducible Python environment, perform data profiling 
 ├── README.md
 ├── src/
 ├── notebooks/
----
-
-If you want, I can also **add a short “how to reproduce each task” section** with exact commands for Task 1, Task 2, Task 3, and the dashboard — this makes your README completely step-by-step for reviewers.  
-
-Do you want me to do that?
-```
 │   ├── **init**.py
 │   ├── benin_eda.ipynb
 │   ├── togo_eda.ipynb
