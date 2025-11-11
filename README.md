@@ -123,8 +123,8 @@ Open in Browser at [http://localhost:8501](http://localhost:8501)
 
 ## screenshots
 
-![Dashboard Screenshot 1](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/1.png)
-![Dashboard Screenshot 2](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/2.png)
-![Dashboard Screenshot 3](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/3.png)
-![Dashboard Screenshot 4](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/4.png)
+![Dashboard Screenshot 1](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshoots/1.png)
+![Dashboard Screenshot 2](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshoots/2.png)
+![Dashboard Screenshot 3](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshoots/3.png)
+![Dashboard Screenshot 4](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshoots/4.png)
 
