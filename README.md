@@ -1,13 +1,16 @@
+
+
+
+# Solar Challenge Week 1
+
+## Overview
+This repository contains Week 1 of the Solar Challenge.  
+The goal is to set up a reproducible Python environment, perform data profiling and cleaning for solar datasets, and create visual analyses, including an interactive Streamlit dashboard.
+
 ---
-# 🌞 Solar Challenge Week 1
 
-## 🧭 Overview
-This repository is for **Week 1 of the Solar Challenge**.  
-The goal is to set up a clean and reproducible Python development environment with version control and CI/CD best practices using GitHub Actions.
+## Folder Structure
 
----
-
-## 🧱 Folder Structure
 ```markdown
 
 ├── .vscode/
@@ -21,28 +24,34 @@ The goal is to set up a clean and reproducible Python development environment wi
 ├── src/
 ├── notebooks/
 │   ├── **init**.py
-│   └── README.md
+│   ├── benin_eda.ipynb
+│   ├── togo_eda.ipynb
+│   ├── sierra_leone_eda.ipynb
+│   └── compare_countries.ipynb
 ├── tests/
 │   ├── **init**.py
-└── scripts/
+└── app/
 ├── **init**.py
-└── README.md
+├── main.py
+└── utils.py
 
 ````
+
+- `data/` contains cleaned CSVs for each country and is excluded from version control.
 
 ---
 
 ## Environment Setup
 
-### Clone the Repository
+### Clone Repository
 ```bash
 git clone https://github.com/<your-username>/solar-challenge-week1.git
 cd solar-challenge-week1
 ````
 
-### Create a Virtual Environment
+### Create Virtual Environment
 
-Using **venv**:
+Using venv:
 
 ```bash
 python -m venv venv
@@ -50,14 +59,7 @@ source venv/bin/activate     # macOS/Linux
 venv\Scripts\activate        # Windows
 ```
 
-Or using **conda**:
-
-```bash
-conda create -n solar-week1 python=3.10 -y
-conda activate solar-week1
-```
-
-### 3️⃣ Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -65,33 +67,35 @@ pip install -r requirements.txt
 
 ---
 
-## Continuous Integration (CI)
+## Git and CI/CD
 
-GitHub Actions is configured to:
-
-* Check out the repository
-* Set up Python 3.10
-* Install dependencies from `requirements.txt`
-* Confirm Python installation and environment setup
-
-You can find the workflow here:
- `.github/workflows/ci.yml`
-
-The workflow runs automatically on:
-
-* Every push to `main` or `setup-task`
-* Every pull request targeting `main`
+* Use feature branches for tasks (e.g., `setup-task`, `eda-countries`,`compare-countries`).
+* Commit often with descriptive messages.
+* GitHub Actions workflow (`.github/workflows/ci.yml`) installs dependencies and verifies Python environment on every push and pull request.
 
 ---
 
-## Development Notes
+## Data Profiling, Cleaning, and EDA
 
-* Use branches for all new features or fixes (e.g., `feature/data-cleaning`, `fix/ci-errors`).
-* Commit often with clear messages, following conventional commit style:
+### Notebooks
 
-  * `init: add .gitignore`
-  * `chore: setup venv`
-  * `ci: add GitHub Actions workflow`
-* Open Pull Requests for code reviews and merging into `main`.
+* `benin_eda.ipynb`, `togo_eda.ipynb`, `sierra_leone_eda.ipynb`
+* `compare_countries.ipynb` for cross-country analysis
+
+### Workflow
+
+1. Load cleaned CSV for each country.
+2. Perform summary statistics and missing value analysis.
+3. Detect outliers using Z-scores and impute missing values.
+4. Visualize time series, correlations, cleaning impact, distributions, temperature effects, and bubble charts.
+5. Export cleaned CSVs to `data/<country>_clean.csv` (ignored by git).
+6. Cross-country comparison includes boxplots, summary tables, statistical tests, and visual rankings.
 
 ---
+
+## Notes
+
+* All raw and cleaned CSVs are excluded from git via `.gitignore`.
+* Notebooks include markdown cells describing findings and observations.
+* All analyses and visualizations are reproducible from the virtual environment.
+
