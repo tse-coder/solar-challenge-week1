@@ -36,11 +36,15 @@ Do you want me to do that?
 │   └── compare_countries.ipynb
 ├── tests/
 │   ├── **init**.py
-└── app/
-├── **init**.py
-├── main.py
-└── utils.py
-
+├── app/
+|   ├── **init**.py
+|   ├── main.py
+|   └── utils.py
+└──screenshots/
+    ├── 1.png
+    ├── 2.png
+    ├── 3.png
+    └── 4.png
 ````
 
 - `data/` contains cleaned CSVs for each country and is excluded from version control.
@@ -96,12 +100,37 @@ pip install -r requirements.txt
 4. Visualize time series, correlations, cleaning impact, distributions, temperature effects, and bubble charts.
 5. Export cleaned CSVs to `data/<country>_clean.csv` (ignored by git).
 6. Cross-country comparison includes boxplots, summary tables, statistical tests, and visual rankings.
+7. A streamlit dashboard to visualize data interactively
 
 ---
+## streamlit dashboard
+
+# Overview
+
+A fully interactive dashboard was implemented to visualize solar data across Benin, Sierra Leone, and Togo.
+
+- Select countries via multiselect widget.
+- Choose metrics (GHI, DNI, DHI, Tamb) for visualization.
+- View boxplots, correlation heatmaps, bubble charts, and summary statistics.
+- Clean and professional layout suitable for screenshots and presentations.
+
+Run Locally
+```bash
+streamlit run app/main.py
+```
+
+Open in Browser at [http://localhost:8501](http://localhost:8501)
 
 ## Notes
 
 * All raw and cleaned CSVs are excluded from git via `.gitignore`.
 * Notebooks include markdown cells describing findings and observations.
 * All analyses and visualizations are reproducible from the virtual environment.
+
+## screenshots
+
+![Dashboard Screenshot 1](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/1.png)
+![Dashboard Screenshot 2](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/2.png)
+![Dashboard Screenshot 3](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/3.png)
+![Dashboard Screenshot 4](https://raw.githubusercontent.com/tse-coder/solar-challenge-week1/main/screenshots/4.png)
 
